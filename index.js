@@ -42,7 +42,7 @@ fs.readdir(originalsDir, async (err, files) => {
             left: 20,
             right: 20,
           };
-        } else {
+        } else if (width < height) {
           // Portrait
           resizeOptions = { height: 1400 };
           const newWidth = Math.round((1400 / height) * width);
@@ -51,6 +51,15 @@ fs.readdir(originalsDir, async (err, files) => {
             bottom: 20,
             left: Math.round((1440 - newWidth) / 2),
             right: Math.round((1440 - newWidth) / 2),
+          };
+        } else {
+          // Square
+          resizeOptions = { width: 1400, height: 1400 };
+          extendOptions = {
+            top: 20,
+            bottom: 20,
+            left: 20,
+            right: 20,
           };
         }
 

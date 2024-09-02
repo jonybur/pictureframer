@@ -8,6 +8,10 @@ node_modules/
 # Optional eslint cache
 .eslintcache
 
+originals/*
+framed/*
+stories/*
+
 # Optional: dotenv environment variables file
 .env
 
